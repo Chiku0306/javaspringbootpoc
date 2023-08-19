@@ -19,13 +19,8 @@ pipeline {
                 script {
                     def dockerHome = tool 'mydocker'
                     env.PATH = "${dockerHome}/bin:${env.PATH}"
-                    sh 'sudo systemctl start docker'
-                    
-                    // Add Jenkins user to the docker group
-                    sh 'sudo usermod -aG docker jenkins'
-                    
-                    // Grant permissions to Docker socket
-                    sh 'sudo chmod 666 /var/run/docker.sock'
+                    sudo usermod -a -G docker jenkins
+
                 }
             }
         }
