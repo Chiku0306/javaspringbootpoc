@@ -7,7 +7,7 @@ pipeline {
     
     environment {
         registryCredential = 'ecr:ap-southeast-1:awscreds'
-        appRegistry = '842485143083.dkr.ecr.ap-southeast-1.amazonaws.com/ecr'
+        appRegistry = '842485143083.dkr.ecr.ap-southeast-1.amazonaws.com/javaspringpoc'
         awsRegistry = "842485143083.dkr.ecr.ap-southeast-1.amazonaws.com/javaspringpoc"
         cluster = "Stage"
         service = "service-stage"
