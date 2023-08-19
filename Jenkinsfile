@@ -12,7 +12,10 @@ pipeline {
         cluster = "Stage"
         service = "service-stage"
     }
-
+    stage('Initialize'){
+            def dockerHome = tool 'myDocker'
+            env.PATH = "${dockerHome}/bin:${env.PATH}"
+        }
     stages {
         stage('Build App Image') {
             steps {
